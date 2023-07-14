@@ -1,0 +1,20 @@
+name: Example workflow for Snyk 3rd party code testing
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+jobs:
+  security-golang:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v2
+    - name: Run Snyk to check for vulnerabilities - Go
+      uses: snyk/actions/golang@master
+      env:
+        SNYK_TOKEN: ${{secrets.SNYK_API_TOKEN}}
+      with:
+        command:  monitor

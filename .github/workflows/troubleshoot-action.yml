@@ -1,4 +1,4 @@
-name: Example workflow for Snyk 3rd party code testing
+name: troubleshoot 1
 
 on:
   workflow_dispatch:

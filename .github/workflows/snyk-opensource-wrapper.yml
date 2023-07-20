@@ -3,10 +3,6 @@ name: Snyk Open Source Wrapper - Node Projects
 on:
   workflow_dispatch:
   workflow_call:
-    secrets:
-      snyk-token:
-        required: true
-        description: 'Snyk Token'
 
 jobs:
   security-open-source:
@@ -18,6 +14,6 @@ jobs:
       uses: snyk/actions/node@master
       continue-on-error: false
       env:
-        SNYK_TOKEN: ${{secrets.snyk-token}}
+        SNYK_TOKEN: ${{secrets.SNYK_API_TOKEN}}
       with:
         command: test

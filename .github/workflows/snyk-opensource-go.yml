@@ -1,11 +1,7 @@
 name: Shared Workflow - Snyk Open Source Test
 
 on:
-  workflow_dispatch:
   workflow_call:
-  push:
-    branches:
-      - 'master'
 
 jobs:
   open-source-test:
